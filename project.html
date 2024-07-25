@@ -5,45 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-        /* color:#2481cc; */
-        color: #000;
-    }
+        .whyClass{
+            display: grid; 
+            grid-template-columns: auto auto auto;
+            width: 80%;
+            margin: auto;
+        }
+        .myfooter{
+            display: grid; 
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            margin-left: 200px; 
+            margin-right: 200px;
+        }
+        .smallFooter{
+            display: none;
+        }
+        .bigHeader{
+            display: flex; 
+            justify-content: space-between; 
+            width: 80%;
+            margin: auto;
+        }
+        .smallHeader{
+            display: none;
+        }
+        .news{
+            display: grid; grid-template-columns: auto auto; 
+            width: 80%;
+            margin: auto;
+        }
+        .news img{
+            width: 350px;
+        }
+        @media only screen and (max-width: 700px) {
+            .whyClass{
+                display: grid;
+                grid-template-columns: auto;
+            }
+            .myfooter{
+                display: none;
+            }
+            .smallFooter{
+                display: flex;
+                justify-content: center;
+            }
+            .bigHeader{
+                display: none;
+            }
+            .smallHeader{
+                display: block;
+            }
+            .news{
+                display: grid; 
+                grid-template-columns: auto; 
+            }
+        }
     </style>
 </head>
 <body >
-    <!-- <div style="color:#2481cc;display: flex;justify-content: space-between;position:sticky;top: 0;">
-        <div style="display: flex;gap: 20px;">
-            <div>Home</div>
-            <div>FAQ</div>
-            <div>Apps</div>
-            <div>API</div>
-            <div>Protocol</div>
-        </div>
-        <div style="display: flex;gap: 20px;">
-            <div>EN</div>
-            <div><img src="./photos/twitter.png">Twitter</div>
-        </div>
-    </div>
-    <hr>
-    <!-- <div style="display: grid;grid-template-columns: auto auto;">
-        <div>
-            <img src="./photos/Telegram-Logo-500x313.jpg" style="width: 300px;">
-            <div>
-                <div>Telegram</div>
-                <div>a new era of messaging</div>
-            </div>
-        </div>
-        <div>
-            <div style="border-left: 3px solid #2481cc;">
-                <div>Recent news</div>
-                <div>June 30</div>
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-            </div>
-        </div>
-    </div> -->
-
-    <div style="display: flex; justify-content: space-between; margin-left: 200px; margin-right: 200px;color: #0088cc; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: large;">
+    <div class="bigHeader"style="color: #0088cc; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: large;padding: 10px;">
         <div style="display: flex; gap: 20px;">
             <div>Home</div>
             <div>FAQ</div>
@@ -67,6 +87,25 @@
         </div>
  
     </div>
+    <div class="smallHeader" style="color: #0088cc;">
+        <div style="display: flex;justify-content: space-between;">
+            <div style="display: flex; gap:20px">
+                <div>Home</div>
+                <div>FAQ</div>
+                <div>Apps</div>
+            </div>
+            <div>
+                <div>
+                    <img src="photos/global.jpg" alt="" style="width: 16px; height: 16px; object-fit: cover;">
+                <select name="" id="" >
+                    <option value="EN">EN</option>
+                    <option value="JP">JP</option>
+                    <option value="FR">FR</option>
+                </select>
+                </div>
+            </div>
+        </div>
+    </div>
     <hr color="#D3D3D3">
 
 
@@ -79,7 +118,7 @@
             <div style="font-family: Arial, Helvetica, sans-serif; color: darkgray; font-size: larger;">a new era of messaging</div>
         </div>
         <div style="display: flex; justify-content: start;gap: 10px;">
-            <img src="photos/col_chart.jpg" alt="" style="height: 250px;">
+            <img src="photos/col_chart.jpg" alt="" style="height: 300px;">
             <div style="display: flex; flex-direction: column; gap: 6px;">
                 <div style="color: #0088cc;"><h3>Recent News</h3></div>
                 <label for="" style="font-weight: bold; font-size: small;">Jun 30</label>
@@ -128,32 +167,46 @@
     </div>
 
     <div style="margin-top: 80px; text-align: center; ">
-        <a href="https://telegram.org/blog" style="color: #0088cc;"><h3>Recent News</h3></a>
+        <a href="https://telegram.org/blog" style="color: #0088cc;margin-bottom: 20px;"><h3>Recent News</h3></a>
     </div>
 
-    <div style="display: grid; grid-template-columns: 20% 30% 30% 20%; margin-top: 20px;">
-        <div></div>
-        <div style="display: flex; flex-direction: column;">
-            <img src="photos/tele_mini_app.jpg" alt="" style="width: 360px; margin-left: 30px;">
+    <!-- <div class="news" style="margin-top: 20px;">
+
+        <div style="display: flex; flex-direction: column;border: 1px solid black;">
+            <img src="photos/tele_mini_app.jpg" alt="" style="width: 340px; margin:auto">
             <a href="https://telegram.org/blog/mini-app-bar-paid-media-and-more" style="margin-left: 50px;color: #0088cc;">Mini App Bar, Paid Media, Story Search & More</a>
-            <div style="margin-left: 30px; padding: 20px;">Our June update adds a way to minimize mini apps into a compact bar, helps content creators monetize their channels with paid photos...</div>
+            <div style="margin:auto;width: 360px; padding: 20px;border: 1px solid black;">Our June update adds a way to minimize mini apps into a compact bar, helps content creators monetize their channels with paid photos...</div>
             <div style="margin-left: 50px;position: relative; top: -10px; color: darkgray;">Jun 30, 2024</div>
         </div>
         <div style="display: flex;flex-direction: column;">
-            <img src="photos/tele_star.jpg" alt="" style="width: 360px;margin-left: 50px;">
+            <img src="photos/tele_star.jpg" alt="" style="width: 340px;margin-left: 50px;">
             <a href="https://telegram.org/blog/telegram-stars" style="margin-left: 80px;color: #0088cc;">Telegram Stars: Pay for Digital Goods and More</a>
             <div style="margin-left: 40px;padding: 20px;">Over 400 million users interact with bots and mini apps on Telegram every month – to buy products, access services, play games, and much</div>
             <div style="margin-left: 60px;position: relative; top: -10px; color: darkgray;">Jun 6, 2024</div>
         </div>
         <div></div>
 
+    </div> -->
+    <div class="news" style="text-align: center;">
+        <div style="width: 350px;margin: auto;margin-bottom: 20px;">
+            <img src="photos/tele_mini_app.jpg"><br>
+            <a href="https://telegram.org/blog/mini-app-bar-paid-media-and-more" style="color: #0088cc; text-align: left;">Mini App Bar, Paid Media, Story Search & More</a>
+            <div  style="text-align: left;">Our June update adds a way to minimize mini apps into a compact bar, helps content creators monetize their channels with paid photos...</div>
+            <div style="text-align: left;color: darkgray;">Jun 30, 2024</div>
+        </div>
+        <div style="width: 350px;margin: auto;margin-bottom: 20px;">
+            <img src="photos/tele_star.jpg"><br>
+            <a href="https://telegram.org/blog/mini-app-bar-paid-media-and-more" style="color: #0088cc; text-align: left;">Telegram Stars: Pay for Digital Goods and More</a>
+            <div  style="text-align: left;">Over 400 million users interact with bots and mini apps on Telegram every month – to buy products, access services, play games, and much</div>
+            <div style="text-align: left;color: darkgray;">Jun 6, 2024</div>
+        </div>
     </div>
     
     <div style="text-align: center;font-size: 23px;padding:20px; margin-top: 50px;">Why Telegram?</div>
-    <div style="display: grid; grid-template-columns: 20% 60% 20%;">
-        <div></div>
+    <!-- <div style="display: grid; grid-template-columns: 20% 60% 20%;">
+        <div></div> -->
         <div>
-            <div style="display: grid; grid-template-columns: auto auto auto;text-align: center;">
+            <div  class="whyClass" style="text-align: center;">
                 <div>
                     <img src="./photos/simple.png" style="width: 160px;">
                     <div style="color: #0088cc;font-size: 26px;">Simple</div>
@@ -201,7 +254,7 @@
                 </div>
             </div>
             <hr>
-            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr;">
+            <div class="myfooter" style="">
                 <div>
                     <div style="font-weight: bold;padding-bottom: 10px;">
                         Telegram
@@ -275,10 +328,19 @@
                     </div>
                 </div>
             </div>
+            <div class="smallFooter" style="color: #0088cc;">
+                <div style="display: flex; gap: 10%;">
+                    <div>ABOUT</div>
+                    <div>BLOG</div>
+                    <div>APPS</div>
+                    <div>PLATFORM</div>
+                    <div>PRESS</div>
+                </div>
+            </div>
         </div>
         
-        <div></div>
-    </div>
+        <!-- <div></div>
+    </div> -->
     <!-- <div style="display: grid; grid-template-columns: auto auto auto auto auto;text-align: center;">
         <div>
             <img src="./photos/simple.png">
